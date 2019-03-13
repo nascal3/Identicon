@@ -11,7 +11,7 @@ defmodule Identicon do
     %Identicon.Image{hex: hex} = image
     hex
     |> Enum.chunk(3)
-    |> mirror_row
+    |> Enum.map(&mirror_row/1)
   end
 
   def mirror_row(row) do
