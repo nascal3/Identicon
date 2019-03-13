@@ -57,7 +57,7 @@ defmodule Identicon do
     %Identicon.Image{hex: hex} = image
     grid =
       hex
-      |> Enum.chunk_every(3)
+      |> Enum.chunk(3)
       |> Enum.map(&mirror_row/1)
       |>List.flatten
       |>Enum.with_index
